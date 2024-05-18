@@ -14,10 +14,10 @@ console.clear();
 // var alter = prompt("Wie alt bist du?");
 // alter = parseInt(alter);
 // 
-// if (alter<18){
-//   console.log("Du bist leider noch zu jung.")
-// }else{
-//   console.log("Herzlich Willkommen!")
+// if (alter < 18) {
+//     console.log("Du bist leider noch zu jung.")
+// } else {
+//     console.log("Herzlich Willkommen!")
 // }
 //
 // Aufgabe 1:
@@ -45,8 +45,8 @@ console.clear();
 // Füge Schrägstriche vor dem Code ein, der zu Aufgabe 1 gehört, sodass dieser nicht mehr ausgeführt wird.
 // Erweitere das Programm sodass auch folgende Eingaben aktzeptiert werden:
 //  Pferd - Säugetier
-// Flusskrebs - Schalentier
-// Weinrose - Pflanze
+//  Flusskrebs - Schalentier
+//  Weinrose - Pflanze
 //////////////////////////////////////////////////////////////////////////////
 
 
