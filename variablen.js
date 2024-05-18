@@ -14,7 +14,7 @@ console.log("Ich habe ein Haustier: " + ichHabeEinHaustier)
 
 
 // Aufgabe 2:
-// Füge fünf weitere Eigenschaft hinzu und gebe sie über die Konsole aus.
+// Füge fünf weitere Eigenschaft oben hinzu und gebe sie auch über die Konsole aus.
 // z.B. anzahlGeschwister, lieblingsfarbe, ...
 
 
