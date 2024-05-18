@@ -1,3 +1,4 @@
 {
-    "javascript.suggest.enabled": false
+    "javascript.suggest.enabled": false,
+    "code-runner.clearPreviousOutput": true
 }
