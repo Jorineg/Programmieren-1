@@ -1,16 +1,32 @@
 const { alert, prompt } = require('vscode-websocket-alerts');
 console.clear();
 
+// Um deinen Code auszuführen, klicke oben rechts auf den Play-Button.
+
+
 
 //////////////////////////////////////////////////////////////////////////////
-// Aufgabe 0:
+// Aufgabe 1:
 // Schreibe ein Programm das zwei zahlen plus rechnen kann.
-// Benutze zwei mal die prompt Funktion, mit der der Benutzer nacheinander zwei Zahlen eingeben kann
-// Versuche die Zahlen zu addieren und mit alert das Ergebnis anzuzeigen
+// Benutze zwei mal die prompt Funktion, mit der der Benutzer nacheinander zwei Zahlen eingeben kann.
+// Versuche die Zahlen zu addieren und mit alert das Ergebnis anzuzeigen.
+// 
+// Es funktionier nicht, wie es soll? 
+// Lies dir hier noch einmal die Beschreibung zu prompt() durch:
+// https://jeggers.notion.site/JavaScript-Standard-Funktionen-4d4311a6d5354cda87c968ab9b3857dd
+// Dann gucke dir den Abschnitt "Datentyp umwandeln" an.
 //////////////////////////////////////////////////////////////////////////////
 
 
+
 //////////////////////////////////////////////////////////////////////////////
+// Aufgabe 2:
+// Modifiziere das Programm unten.
+// (Mit Command + Shift + 7 kannst du die Kommentare entfernen)
+// Anstatt nach dem Alter zu fragen, frage den Benutzer nach einem Passwort.
+// Heiße den Benutzer nur willkommen, wenn er das richtige Passwort eingibt.
+// Du kannst dir selber ein Passwort ausdenken.
+//
 // console.clear();
 // var alter = prompt("Wie alt bist du?");
 // alter = parseInt(alter);
@@ -20,16 +36,21 @@ console.clear();
 // } else {
 //     console.log("Herzlich Willkommen!")
 // }
-//
-// Aufgabe 1:
-// Modifiziere das Programm oben.
-// Anstatt nach dem Alter zu fragen, frage den Benutzer nach einem Passwort.
-// Heiße den Benutzer nur willkommen, wenn er das richtige Passwort eingibt.
-// Du kannst dir selber ein Passwort ausdenken.
 //////////////////////////////////////////////////////////////////////////////
 
 
+
 //////////////////////////////////////////////////////////////////////////////
+// Aufgabe 2:
+// Wenn du mit Aufgabe 1 fertig bist, kannst du dort mit der Tastenkombination
+// Command + Shift + 7 die Kommenate wieder hinzufügen, damit der Code nicht
+// ausgeführt wird. Dann kannst du die Kommentare vor dem Code unten entfernen.
+// Versuche zuerst das Programm zu verstehen und zu testen.
+// Erweitere dann das Programm, sodass auch folgende Eingaben aktzeptiert werden:
+//   Pferd - Säugetier
+//   Flusskrebs - Schalentier
+//   Weinrose - Pflanze
+// 
 // var tier = prompt("Gib ein tier ein.")
 // if (tier == "Tiger"){
 //   console.log(tier + ": Säugetier");
@@ -40,15 +61,8 @@ console.clear();
 // }else{
 //   console.log(tier + ": Keine Informationen verfügbar")
 // }
-// 
-// Aufgabe 2:
-// Entferne die Kommentare (//) von obigem code.
-// Füge Schrägstriche vor dem Code ein, der zu Aufgabe 1 gehört, sodass dieser nicht mehr ausgeführt wird.
-// Erweitere das Programm sodass auch folgende Eingaben aktzeptiert werden:
-//  Pferd - Säugetier
-//  Flusskrebs - Schalentier
-//  Weinrose - Pflanze
 //////////////////////////////////////////////////////////////////////////////
+
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -56,6 +70,7 @@ console.clear();
 // Lasse den benutzer mit der prompt Funktion 2 zahlen eingeben.
 // Finde die größere der beiden Zahlen und zeige sie dem Nutzer über alert.
 //////////////////////////////////////////////////////////////////////////////
+
 
 
 //////////////////////////////////////////////////////////////////////////////
@@ -73,6 +88,7 @@ console.clear();
 //////////////////////////////////////////////////////////////////////////////
 
 
+
 //////////////////////////////////////////////////////////////////////////////
 // Aufgabe 5: (Kannst du das ABC?)
 // Lasse den benutzer nacheinander 3 Wörter mit prompt eingeben.
@@ -83,6 +99,7 @@ console.clear();
 //////////////////////////////////////////////////////////////////////////////
 
 
+
 //////////////////////////////////////////////////////////////////////////////
 // BONUSAUFGABE:
 // Porgrammiere nun einen Taschenrechner der alle 4 Grundrechenarten beherrscht
@@ -90,6 +107,7 @@ console.clear();
 // Erste Zahl, Rechenzeichen (+-*/), Zweite Zahl
 // Gebe am Schluss das Ergebnis mit alert() aus.
 //////////////////////////////////////////////////////////////////////////////
+
 
 
 //////////////////////////////////////////////////////////////////////////////
