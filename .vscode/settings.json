@@ -1,7 +1,6 @@
 {
-    "javascript.suggest.enabled": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
     "code-runner.clearPreviousOutput": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500,
-    "cmake.configureOnOpen": false
+    "files.autoSaveDelay": 500
 }

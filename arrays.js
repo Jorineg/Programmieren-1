@@ -1,3 +1,4 @@
+const { alert, prompt } = require('vscode-websocket-alerts');
 console.clear()
 
 var animals = ["Pferd", "Löwe", "Adler", "Tiger"];

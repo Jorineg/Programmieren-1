@@ -1,3 +1,4 @@
+const { alert, prompt } = require('vscode-websocket-alerts');
 console.clear()
 
 // In visual studio code kann man mit der Taskenkomibnation Command + Shift + 7
