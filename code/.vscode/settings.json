@@ -2,5 +2,7 @@
     "editor.acceptSuggestionOnCommitCharacter": false,
     "code-runner.clearPreviousOutput": true,
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 500
+    "files.autoSaveDelay": 500,
+    "aiCodeChecker.modelName": "anthropic/claude-3.5-sonnet",
+    "liveServer.settings.CustomBrowser": "chrome"
 }
