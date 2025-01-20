@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Turtle</title>
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.min.js"
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.min.js" crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js" integrity="sha512-J5ha2LF4Le+PBQnI5+xAVJDR+sZG9uSgroy4n/A6TLjNkvYQbqZA8WHZdaOvJ0HiKkBC9Frmvs10rFDSHKmveQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.7/require.min.js" integrity="sha512-J5ha2LF4Le+PBQnI5+xAVJDR+sZG9uSgroy4n/A6TLjNkvYQbqZA8WHZdaOvJ0HiKkBC9Frmvs10rFDSHKmveQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script>
         require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs' } });
-    </script>
+    </script> -->
     <script>
         const params = new URLSearchParams(window.location.search);
         const useLocal = params.get('dev') === 'true';
@@ -19,15 +19,15 @@
         const baseURL = useLocal ? '' : `https://jorineg.github.io/p5-turtle`;
 
         const files = [
-            { name: 'wrapConsole.js', type: 'script' },
+            { name: 'styles.css', type: 'style' },
             { name: 'theme.js', type: 'script' },
+            { name: 'wrapConsole.js', type: 'script' },
             { name: 'scriptSelector.js', type: 'script' },
             { name: 'turtleLogic.js', type: 'script' },
             // { name: 'colors.js', type: 'script'},
             { name: 'strangeFunctions.js', type: 'script' },
             { name: 'executionLogic.js', type: 'script' },
-            { name: 'editor.js', type: 'script' },
-            { name: 'styles.css', type: 'style' }
+            // { name: 'editor.js', type: 'script' },
         ];
 
         // Load a single script and return a promise
@@ -81,7 +81,7 @@
     </script>
 </head>
 
-<body>
+<body class="no-transition">
     <div id="script-file-name" data-filename="welcome.js" style="display: none;"></div>
     <!-- <div class="code-container">
         <div class="editor-header">
@@ -189,11 +189,11 @@
                 <label>Canvas Size:</label>
                 <div style="display: flex; gap: 10px;">
                     <div class="show-press-enter-message">
-                    <input type="number" id="canvasWidth" value="700" min="100" max="2000">
+                        <input type="number" id="canvasWidth" value="700" min="100" max="2000">
                     </div>
                     <label>x</label>
                     <div class="show-press-enter-message">
-                    <input type="number" id="canvasHeight" value="700" min="100" max="2000">
+                        <input type="number" id="canvasHeight" value="700" min="100" max="2000">
                     </div>
                 </div>
                 <button id="resetSize">Reset Size</button>
@@ -226,6 +226,7 @@
                     Download Drawing
                 </button>
             </div>
+            <canvas id="defaultCanvas0" class="p5Canvas" width="700" height="700"></canvas>
         </main>
     </div>
 </body>
