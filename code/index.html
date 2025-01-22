@@ -14,10 +14,11 @@
     <script>
         const params = new URLSearchParams(window.location.search);
         const useLocal = params.get('dev') === 'true';
-
         console.log('dev mode:', useLocal);
-        const baseURL = useLocal ? '' : `https://jorineg.github.io/p5-turtle`;
-
+        window.PUBLIC_URL = 'https://jorineg.github.io/p5-turtle';
+        window.baseURL = useLocal ? '' : window.PUBLIC_URL;
+    </script>
+    <script>
         const files = [
             { name: 'styles.css', type: 'style' },
             { name: 'theme.js', type: 'script' },
@@ -30,43 +31,24 @@
             // { name: 'editor.js', type: 'script' },
         ];
 
-        // Load a single script and return a promise
-        function loadScript(file) {
-            return new Promise((resolve, reject) => {
-                const element = document.createElement(file.type === 'script' ? 'script' : 'link');
-                const url = useLocal ? `./${file.name}` : `${baseURL}/${file.name}`;
-
-                if (file.type === 'script') {
-                    element.src = url;
-                    element.onload = () => resolve();
-                    element.onerror = () => reject();
-                } else {
-                    element.rel = 'stylesheet';
-                    element.href = url;
-                    element.onload = () => resolve();
-                    element.onerror = () => reject();
-                }
-                document.head.appendChild(element);
-            });
-        }
-
-        // Load scripts sequentially
         async function loadAllFiles() {
             // Load CSS first (non-blocking)
             const cssFile = files.find(f => f.type === 'style');
             const link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = useLocal ? `./${cssFile.name}` : `${baseURL}/${cssFile.name}`;
+            link.href = useLocal ? `./${cssFile.name}` : `${window.baseURL}/${cssFile.name}`;
             document.head.appendChild(link);
 
-            // Load scripts in sequence
+            // Load all scripts
             const scripts = files.filter(f => f.type === 'script');
-            for (const file of scripts) {
-                await loadScript(file);
-            }
+            scripts.forEach(file => {
+                const script = document.createElement('script');
+                script.src = useLocal ? `./${file.name}` : `${window.baseURL}/${file.name}`;
+                script.async = false; // Ensure scripts execute in order
+                document.head.appendChild(script);
+            });
 
-            // Dispatch custom event when all scripts are loaded
-            document.dispatchEvent(new Event('scriptsLoaded'));
+            // No need to wait or handle execution order - the browser does it for us
         }
 
         loadAllFiles();
@@ -76,7 +58,7 @@
         favicon.rel = 'icon';
         favicon.type = 'image/png';
         favicon.sizes = '256x256';
-        favicon.href = useLocal ? './icon.png' : `${baseURL}/icon.png`;
+        favicon.href = useLocal ? './icon.png' : `${window.baseURL}/icon.png`;
         document.head.appendChild(favicon);
     </script>
 </head>
@@ -165,6 +147,16 @@
 
         <main id="canvasContainer">
             <div class="theme-switcher">
+                <button id="shareButton" aria-label="Share code">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+                    </svg>
+                </button>
                 <button id="themeToggle" aria-label="Toggle theme">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
